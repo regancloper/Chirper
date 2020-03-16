@@ -1,33 +1,14 @@
 import React from 'react';
-// import PostDetail from './PostDetail';
-
-// class Comment extends Component {
-//     constructor(props) {
-//         super(props);
-
-//         // this.state = {
-//         //     // author: props.post.author,
-//         //     // text: props.post.text,
-//         //     // date: props.post.date,
-//         //     // id: props.post.id
-//         // }
-
-//     }
-
-//     render() {
-//         return (
-//             <div className="list-group-item list-group-item-action">
-//                 {/* <PostDetail author={this.props.author} date={this.state.date} /> */}
-//                 <p className="mb-1">{this.props.post}</p>
-//             </div>
-//         );
-//     }
-// }
+import moment from 'moment';
 
 const Comment = (props) => {
     return (
         <div className="list-group-item list-group-item-action">
-            <p className="mb-1">{props.post}</p>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{props.post.author}</h5>
+                <small>{moment(props.post.date).format('MMMM Do YYYY, h:mm:ss a')}</small>
+            </div>
+            <p className="mb-1">{props.post.text}</p>
         </div>
     );
 };
